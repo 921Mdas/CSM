@@ -16,7 +16,7 @@ const Sidebar = ({ showMenu, setShowMenu }) => {
         </li>
         <li onClick={() => setShowMenu(false)}>
           <span>02.</span>
-          <a href="#projects">Projects</a>
+          <a href="#projects">Timeline</a>
         </li>
         <li onClick={() => setShowMenu(false)}>
           <span>03.</span>

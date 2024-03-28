@@ -15,16 +15,7 @@ const Network = () => {
             <GrLinkedinOption />
           </a>
         </div>
-        <div className="social">
-          <a href="https://github.com/921Mdas/">
-            <FaGithubSquare />
-          </a>
-        </div>
-        <div className="social">
-          <a href="https://www.instagram.com/">
-            <AiFillInstagram />
-          </a>
-        </div>
+      
         <div className="line1"></div>
       </div>
       <div className="right_network">

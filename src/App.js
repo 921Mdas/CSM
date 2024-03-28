@@ -20,9 +20,9 @@ function App() {
     <div className="Main">
       <Navbar />
       <Greet />
-      <Sdx />
+      {/* <Sdx /> */}
       <Network />
-      <div className="observer">
+      <div >
         <About className="target" />
         <Projects className="target" />
         <Contact className="target" />

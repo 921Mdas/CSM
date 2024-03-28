@@ -1,5 +1,242 @@
 @import "./index.scss";
 
+
+@media screen and (max-width: 1199px) {
+  // ***************navbar
+
+  .showmenu {
+    transform: translateX(0%) !important;
+  }
+
+  .social_networks {
+    @include flex(center, center, column, 1em);
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    .social {
+      font-size: 30px;
+
+      a {
+        color: var(--ocean-blue);
+      }
+    }
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    width: 50px;
+    height: 50px;
+    @include flex(center, center, row, 0);
+    z-index: 1000;
+    font-size: 25px;
+    color: var(--ocean-blue);
+    cursor: pointer;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .sidebar {
+    height: 100vh;
+    width: 50%;
+    position: fixed;
+    display: block;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: var(--bunting);
+    transform: translateX(100%);
+    transition: all 0.5s ease-in;
+    font-family: var(--mono-font);
+    padding: var(--padding);
+    @include flex(center, center, column, 3em);
+
+    .links span {
+      color: var(--ocean-blue);
+    }
+
+    .welcome,
+    .links a {
+      color: var(--rock-blue);
+    }
+
+    .welcome {
+      $delay: 0.5s;
+      position: relative;
+      width: 100%;
+      height: 4vh;
+      @include flex(center, center, row, 0);
+      overflow: hidden;
+
+      .first_pop,
+      .second_pop {
+        position: relative;
+        transform: translateY(100px);
+      }
+
+      .first_pop {
+        $delay: calc($delay);
+        // animation: smoothUp $delay ease-in 0.5s 1 forwards;
+      }
+
+      .second_pop {
+        $delay: calc($delay + 0.5s);
+        
+        // animation: smoothUp $delay ease-in 0.5s 1 forwards;
+      }
+    }
+
+    .links {
+      width: 100%;
+      height: 50vh;
+      @include flex(space-between, center, column, 0);
+
+      li {
+        @include flex(space-between, center, column, 0);
+      }
+
+      li,
+      a {
+        text-decoration: none;
+        list-style: none;
+        transition: all 0.5s ease;
+      }
+
+      .resume {
+        @include btnresetoutline;
+        font-size: var(--ft-med);
+      }
+    }
+
+    //   ***
+    li:hover a {
+      color: var(--ocean-blue);
+    }
+  }
+
+  .network {
+    display: none;
+  }
+
+  .counter,
+  .sdx {
+    display: none;
+  }
+
+  //***********landingpage
+
+  .landing_page {
+    width: 100% !important;
+
+    .whoami {
+      width: 100%;
+    }
+
+    .statement {
+      width: 100% !important;
+    }
+  }
+
+  // *********about me
+
+  .about {
+    height: max-content;
+    .about_brandstatement {
+      @include flex(flex-start, center, column, 15px);
+
+      .brandstatement {
+        height: max-content;
+        width: 100%;
+      }
+    }
+
+     .stacks {
+      height: 70vh;
+      .stacks_list {
+        margin-top: 1.5em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 0;
+
+        .stack_skill{
+          .stack1{
+            border: solid 1px var(--regent-gray);
+            padding: 1em;
+            // border-radius: 10px;
+
+            .skill_name{
+              display: flex;
+              justify-content: center;
+            }
+            
+          }
+        }
+      }
+    }
+  }
+
+  // **********project
+
+  .projects {
+    height: max-content;
+    .project_presentation {
+      @include flex(space-between, center, column, 15px);
+
+      .presentation_screen {
+        width: 100%;
+        height: 50vh;
+
+        img {
+          transform: translateZ(0px) rotateY(0deg);
+        }
+      }
+
+      .presentation_description {
+        position: relative;
+        width: 100%;
+
+        .project_title {
+          text-align: center;
+        }
+      }
+    }
+
+    .project02 {
+      .presentation_screen {
+        margin-left: 0;
+      }
+
+      .presentation_description {
+        left: 0;
+      }
+    }
+  }
+
+  // ********** contact
+  .scrollup {
+    left: 0%;
+    bottom: 25%;
+    width: 100%;
+
+    a {
+      color: var(--ocean-blue);
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      bottom: 25%;
+    }
+  }
+
+  .overlay_screen1,
+  .overlay_screen2 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1040px) {
   // ***************navbar
 
@@ -78,12 +315,13 @@
 
       .first_pop {
         $delay: calc($delay);
-        animation: smoothUp $delay ease-in 0.5s 1 forwards;
+        // animation: smoothUp $delay ease-in 0.5s 1 forwards;
       }
 
       .second_pop {
         $delay: calc($delay + 0.5s);
-        animation: smoothUp $delay ease-in 0.5s 1 forwards;
+        
+        // animation: smoothUp $delay ease-in 0.5s 1 forwards;
       }
     }
 
@@ -150,6 +388,17 @@
         width: 100%;
       }
     }
+
+     .stacks {
+      height: 50vh;
+      .stacks_list {
+        margin-top: 1.5em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 0;
+      }
+    }
   }
 
   // **********project
@@ -210,7 +459,35 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
+
+  .landing_page{
+
+    text-align: center;
+    .greetings{
+      opacity: 0 !important;
+
+    }
+
+    .landing_page_content{
+      margin-top: 5em;
+      padding: 1em;
+ 
+      .landing_page_content_description{
+        grid-column: 1/-1;
+        padding: 0;
+      }
+ 
+     .initials{
+       display: none;
+     }
+     padding: 0;
+     width: 100%;
+     margin: 0;
+     grid-template-columns: 1fr;
+   }
+
+  }
   .sidebar {
     width: 100%;
   }
@@ -219,20 +496,43 @@
     width: 100% !important;
     margin: 0px auto 0 auto;
 
+
     .about_brandstatement {
       .avatar {
         margin-bottom: 0px;
         width: 100%;
+
         img {
-          width: 70%;
+          width: 40%;
         }
       }
     }
 
     .stacks {
+      height: 70vh;
       .stacks_list {
         margin-top: 1.5em;
-        @include flex(center, flex-start, row, 10px);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 1em;
+
+        .stack_skill{
+          display: grid;
+          .stack1{
+            border: solid 1px var(--regent-gray);
+            padding: .5em;
+            // border-radius: 10px;
+          
+            .skill_name, .skill_icon_comp{
+              display: flex;
+              justify-content: center;
+            }
+
+            .skill_icon_comp{
+            }
+          }
+        }
       }
     }
   }
@@ -299,18 +599,208 @@
   }
 }
 
+@media screen and (max-width: 550px) {
+
+  .landing_page{
+
+    text-align: center;
+    .greetings{
+      opacity: 0 !important;
+
+    }
+
+    .landing_page_content{
+      margin-top: 5em;
+      padding: 1em;
+ 
+      .landing_page_content_description{
+        grid-column: 1/-1;
+        padding: 0;
+      }
+ 
+     .initials{
+       display: none;
+     }
+     padding: 0;
+     width: 100%;
+     margin: 0;
+     grid-template-columns: 1fr;
+   }
+
+  }
+  .sidebar {
+    width: 100%;
+  }
+
+  .about {
+    width: 100% !important;
+    margin: 0px auto 0 auto;
+    .about_brandstatement {
+      .avatar {
+        margin-bottom: 0px;
+        width: 100%;
+
+        img {
+          width: 70%;
+        }
+      }
+    }
+
+   
+    .stacks {
+     height: 80vh;
+
+      .stacks_list {
+        margin-top: 1.5em;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+
+      .stack1{
+        text-align: center;
+        border: solid 1px var(--regent-gray);
+        width: 200px;
+        padding: 1em;
+        // border-radius: 10px;
+
+        .skill_name{
+        text-align: center;
+        width: 100%;
+
+        }
+      }
+
+      }
+    }
+
+    
+
+    
+  }
+
+  .projects {
+    width: 100%;
+
+    .project_list {
+      height: max-content;
+      .project01 {
+        .presentation_description {
+          height: max-content;
+          margin-left: 1em;
+          .project_descr {
+            margin-bottom: 2em;
+            height: max-content;
+          }
+        }
+      }
+
+      .project02 {
+        .presentation_description {
+          height: max-content;
+
+          .project_descr {
+            margin-bottom: 2em;
+            height: max-content !important;
+          }
+        }
+      }
+
+      .project03 {
+        .presentation_description {
+          height: max-content;
+
+          .project_descr {
+            margin-bottom: 2em;
+            height: max-content !important;
+          }
+        }
+      }
+    }
+  }
+
+  .contact_section {
+    width: 100%;
+
+    .scrollup {
+      left: 0%;
+      bottom: 5%;
+      position: absolute;
+
+      a {
+        color: var(--ocean-blue);
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .message {
+      width: 100%;
+    }
+  }
+}
+
+
+
 @media screen and (max-width: 450px) {
+
+  .landing_page_content{
+    border: solid 1px transparent;
+  }
+
   .landing_page {
     padding-top: 1em;
     margin: 1.5em 0;
   }
 
-  .stacks_list {
-    flex-wrap: wrap;
+  .about{
 
-    .stack_skill {
-      border: solid 1px var(--regent-gray);
-      padding: 10px;
+    .stacks{
+      height: 100vh;
+      
+       .stack1Comp{
+         display: grid;
+       }
+    }
+
+
+
+
+    .about_brandstatement {
+       .avatar {
+         margin-bottom: 0px;
+         width: 100%;
+ 
+         img {
+           width: 100%;
+         }
+       }
+     }
+
+  }
+
+  .stacks{
+    .stacks_list {
+      flex-wrap: wrap;
+      
+  
+      .stack_skill {
+
+        .stack1{
+        text-align: center;
+        border: solid 1px var(--regent-gray);
+        // border-radius: 10px;
+        width: 80%;
+  
+  
+        .skill_name{
+        font-size: .9rem ;
+        width: 100px; 
+  
+        }
+  
+         
+        }
+      }
     }
   }
 
@@ -321,9 +811,27 @@
       .project_descr {
         margin-bottom: 1em !important;
         height: 23vh !important;
+
       }
     }
   }
+
+  .projects{
+
+    .project02, .project01,.project03 {
+      .presentation_description {
+        .stack_used {
+          ul {
+            li{
+    font-size: .8rem;
+    text-align: center;
+  }
+          }
+        }
+      }
+    }
+
+  } 
 
   .project03 {
     .project_descr {
@@ -346,3 +854,134 @@
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+
+  .landing_page_content{
+    border: solid 1px transparent;
+  }
+
+  .landing_page {
+    padding-top: 1em;
+    margin: 1.5em 0;
+  }
+
+  .about{
+
+     .stacks {
+     height: 100vh;
+
+      .stacks_list {
+        margin-top: 1.5em;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+
+
+      .stack1{
+        text-align: center;
+        border: solid 1px var(--regent-gray);
+        width: 100px;
+        padding: 1em;
+        // border-radius: 10px;
+
+        .skill_name{
+        text-align: center;
+        width: 100%;
+
+        }
+      }
+
+      }
+    }
+
+
+
+
+
+    .about_brandstatement {
+       .avatar {
+         margin-bottom: 0px;
+         width: 100%;
+ 
+         img {
+           width: 100%;
+         }
+       }
+     }
+
+  }
+
+  .stacks_list {
+    flex-wrap: wrap;
+
+    .stack_skill {
+      // padding: 10px;
+
+      .stack1{
+      text-align: center;
+      border: solid 1px var(--regent-gray);
+      padding: 1em;
+      // border-radius: 10px;
+
+      .skill_name{
+      font-size: .9rem ;
+      width: 100px; 
+      }
+
+       
+      }
+    }
+  }
+
+  .project02 {
+    .presentation_description {
+      height: max-content;
+
+      .project_descr {
+        margin-bottom: 1em !important;
+        height: 23vh !important;
+
+      }
+    }
+  }
+
+  .projects{
+
+    .project02, .project01,.project03 {
+      .presentation_description {
+        .stack_used {
+          ul {
+            li{
+    font-size: .8rem;
+    text-align: center;
+  }
+          }
+        }
+      }
+    }
+
+  } 
+
+  .project03 {
+    .project_descr {
+      height: 30vh !important;
+    }
+  }
+
+  .contact_section {
+    .scrollup {
+      left: 0%;
+      bottom: 2%;
+      position: absolute;
+
+      a {
+        color: var(--ocean-blue);
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
+
+

@@ -1,24 +1,24 @@
-import React, { useState, useRef, useMemo, useEffect } from "react";
-import muggshot from "../../assets/django.png";
+import React, { useState, useRef} from "react";
 import "./about.scss";
 
-import { BiRightArrow } from "react-icons/bi";
-import { GrHeroku } from "react-icons/gr";
-import { FaReact } from "react-icons/fa";
 import { SiRedux, SiMongodb } from "react-icons/si";
-import { TbBrandJavascript } from "react-icons/tb";
-import { DiSass } from "react-icons/di";
 import { AiFillApi } from "react-icons/ai";
 import { BiGitBranch } from "react-icons/bi";
-import { DiNodejsSmall } from "react-icons/di";
-import { AiOutlineConsoleSql } from "react-icons/ai";
-import { AiOutlineHtml5 } from "react-icons/ai";
-import { TbBrandPython } from "react-icons/tb";
-import { HiOutlineDeviceMobile } from "react-icons/hi";
-import { SiDjango } from "react-icons/si";
+import { IoPeopleCircleOutline } from "react-icons/io5";
+import { AiFillCheckCircle } from "react-icons/ai";
+import { FaFileContract } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaFolder } from "react-icons/fa";
 import deo from "../../assets/Deo.jpeg";
+import { IoIosTrendingUp } from "react-icons/io";
+import { FaLink } from "react-icons/fa";
 import Skill from "./Skill";
-import { OBSERVERAPI } from "../../helper";
+import { BsBriefcaseFill } from "react-icons/bs";
+import { GiReceiveMoney } from "react-icons/gi";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+import { useEffect } from "react";
+gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
   const [pos, setPos] = useState(0);
@@ -26,50 +26,82 @@ const About = () => {
     setPos(window.scrollY);
   });
 
-  const target = useRef(null);
-  const [isVisible, stateChange] = useState(false);
+  useEffect(()=>{
 
-  OBSERVERAPI(target, stateChange);
+    let mm = gsap.matchMedia()
+    
+    let tl = gsap.timeline({
+      scrollTrigger:{
+        trigger:'.about',
+        start:"top 70%",
+        end:"bottom 100%",
+        scrub:0.5
+      }
+    })
 
-  const classChanger = isVisible ? "" : "observerAPI";
+
+    mm.add("(min-width: 600px)", ()=>{
+
+      tl.fromTo('.title', {x:100,opacity:0},{x:0, opacity:1}).fromTo('.avatar',{
+     y:100,opacity:0, scale:0.9
+    }, {y:0, opacity:1, scale:1}).fromTo('.brand_mainstatement', {
+      opacity:0,y:100
+    }, {opacity:1,y:0}).fromTo('.brand_substatement',{
+      opacity:0,y:100
+    },{opacity:1,y:0}).fromTo('.brand_outside_work',{
+      opacity:0, x:100
+    }, {opacity:1,x:0})
+
+   
+    let tl2 = gsap.timeline({
+      scrollTrigger:{
+        trigger:'.stacks',
+        start:"top 70%",
+        end:"bottom 50%",
+        scrub:0.5,
+        
+      }
+    })
+
+    tl2.fromTo('.stacks_list', {x:1000,opacity:0}, {x:0, opacity:1, duration:5})
+    })
+
+    
+
+  
+  },[])
+
 
   return (
-    <div className={`about `} id="about">
+    <div className={`about`} id="about">
       <div className="title">
         <span>01.</span> <h1>About Me</h1>
         <div className="about_line"></div>
       </div>
 
-      <div className={`about_brandstatement ${classChanger}`} ref={target}>
+      <div className={`about_brandstatement`} >
         <div className="avatar">
           <img src={deo} alt="" className="avatarprofileimg" />
         </div>
         <div className="brandstatement">
           <span>
-            🧑🏾‍💻 My interest in web development started back in 2013. Freelancing
-            as a graphic designer, a client in need asked if I could challenge
-            myself and build a low-cost website — it turns out research and hard
-            work can do anything! Please see my 2013 website{" "}
-            <a href="http://chea-ar.org/Index.html">🖱 Here</a>
+            <span className="brand_mainstatement">
+
+            🧑🏾‍💻 The world is drowning in information. To manage it, we need the right tools to remove the noise and find what can inform strategy: software. I love the SaaS era and what it brings as a solution to previously complex and time-consuming problems. I do my part by helping clients understanding the software at their disposal and how they can best use data to grow revenue.
+            </span>
             <br />
             <br />
+            <span className="brand_substatement">
+
+            I specialize in sales, particularly client success. With my ability to build strong relationships and my reliability in delivering what I commit to, I succeed in solving problems and growing accounts. In 2022, My work with software sparked an additional interest, I wanted to look under the hood and see how everything connects. I have since graduated as a full-stack software developer and use my newly acquired skills to better connect software with people.
+            </span>
+            <br/>
+            <br/>
+            <div className="brand_outside_work">
+            Outside of work: Sushi, Music, Family, Nature, repeat.
+            </div>
           </span>
-          <span>
-            I was proud that I had just discovered a new super power, which was
-            motivation and passion for anything I genuinly wanted to do. I
-            graduated with a Btech in Communication Science which led me to work
-            for a SaaS company.
-          </span>
-          <span>
-            <br />
-            <br /> Working closely with clients and engineering help me better
-            understand the needs and challenges from both sides. Researching how
-            to solve my clients' problems, led me back to my passion for
-            programming. Using my superpowers, I have since spent more than 300
-            hours of self-study and an additional 480 hours attending a coding
-            Bootcamp and acquired skills to develop, test, and deploy full-stack
-            applications.
-          </span>
+          
         </div>
       </div>
 
@@ -78,24 +110,24 @@ const About = () => {
 
         <div className={`stacks_list`}>
           <div className="stack_list1 stack_skill">
-            <Skill Icon={AiOutlineHtml5} skilltitle={"HTML5"} />
-            <Skill Icon={DiSass} skilltitle={"Css, Sass"} />
-            <Skill Icon={TbBrandJavascript} skilltitle={"Javascript"} />
+            <Skill Icon={FaFolder} skilltitle={"Account Management"} />
+            <Skill Icon={IoPeopleCircleOutline} skilltitle={"Customer Success"} />
+            <Skill Icon={ IoIosTrendingUp} skilltitle={"Client Engagement"} />
           </div>
           <div className="stack_list2 stack_skill">
-            <Skill Icon={FaReact} skilltitle={"ReactJs"} />
-            <Skill Icon={HiOutlineDeviceMobile} skilltitle={"React Native"} />
-            <Skill Icon={SiRedux} skilltitle={"Redux"} />
+            <Skill Icon={BsBriefcaseFill} skilltitle={"Executive Advisory"} />
+            <Skill Icon={FaFileContract} skilltitle={"Renewal Strategies"} />
+            <Skill Icon={MdOutlineEmail} skilltitle={"Communication"} />
           </div>
           <div className="stack_list2 stack_skill">
-            <Skill Icon={SiMongodb} skilltitle={"MongoDB"} />
-            <Skill Icon={AiOutlineConsoleSql} skilltitle={"PostgreSQL"} />
-            <Skill Icon={SiDjango} skilltitle={"Django"} />
+            <Skill Icon={SiMongodb} skilltitle={"Customer Advocacy"} />
+            <Skill Icon={FaLink} skilltitle={"Relationship building"} />
+            <Skill Icon={GiReceiveMoney} skilltitle={"Revenue Growth"} />
           </div>
           <div className="stack_list2 stack_skill">
-            <Skill Icon={BiGitBranch} skilltitle={"Git"} />
-            <Skill Icon={AiFillApi} skilltitle={"Rest Apis"} />
-            <Skill Icon={TbBrandPython} skilltitle={"Python"} />
+            <Skill Icon={BiGitBranch}  skilltitle={"Client Onboarding"} />
+            <Skill Icon={AiFillApi} skilltitle={"Usage Optimization"} />
+            <Skill Icon={AiFillCheckCircle} skilltitle={"Strategic Consulting"} />
           </div>
         </div>
       </div>

@@ -49,6 +49,7 @@
         transform: translateZ(0px) rotateY(12deg);
         z-index: 5;
         opacity: 0.5;
+
       }
 
       img {
@@ -90,7 +91,7 @@
         background: var(--bunting);
         margin-top: 1em;
         height: max-content !important;
-        color: var(--regent-gray);
+        color: var(--rock-blue);
         box-shadow: var(--shadow-blue);
         p {
           padding: 1em;
@@ -105,8 +106,9 @@
           @include flex(flex-end, center, row, 15px);
           li {
             list-style: none;
-            color: var(--rock-blue);
+            color: var(--ocean-blue);
             font-family: var(--mono-font);
+            font-size: 15px
           }
         }
       }
@@ -203,7 +205,8 @@
         background: var(--bunting);
         margin-top: 1em;
         height: 15vh;
-        color: var(--regent-gray);
+                color: var(--rock-blue);
+
         box-shadow: var(--shadow-blue);
         p {
           padding: 1em;
@@ -317,7 +320,8 @@
         background: var(--bunting);
         margin-top: 1em;
         height: 15vh;
-        color: var(--regent-gray);
+                color: var(--rock-blue);
+
         box-shadow: var(--shadow-blue);
         p {
           padding: 1em;

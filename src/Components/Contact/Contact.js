@@ -18,8 +18,8 @@ const Contact = () => {
         </div>
 
         <div className="message">
-          I’m currently interviewing for new opportunities, my inbox is always
-          open. Looking forward to hearing from you! <br /> <br /> Email:
+          My inbox is always
+          open. Say hi! <br /> <br /> Email:
           rodeomads@gmail.com
           <div className="social_networks">
             <div className="social">

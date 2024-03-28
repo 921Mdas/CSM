@@ -9,12 +9,35 @@
   @include flex(center, flex-start, column, 10px);
   margin: 0 auto;
 
+  .landing_page_content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .landing_page_content_description{
+      grid-column: 2/-1;
+      padding-left: 4em;
+      
+    }
+
+  
+    .initials{
+      font-size:9rem;
+      color: var(--regent-gray);
+       writing-mode: vertical-lr;
+       transform: rotate(180deg);
+       border-left: solid 1px var(--ocean-blue);
+    }
+
+  }
+
   .greetings {
     font-family: var(--mono-font);
     color: var(--ocean-blue);
-    transform: translateX(100px);
-    animation: leftsmooth 0.5s ease-in $delay 1 forwards;
-    opacity: 0;
+    position: relative;
+    left: 8%;
+    font-weight: bold;
+    
+    // animation: leftsmooth 0.5s ease-in $delay 1 forwards;
+    // opacity: 0;
   }
 
   .whoami {
@@ -22,19 +45,19 @@
     font-weight: 900;
 
     .my_name {
-      color: var(--rock-blue);
-      transform: translateY(100px);
-      opacity: 0;
-      animation: opaciySlideUp 0.5s ease-in $delay 1 forwards;
+      color: var(--ocean-blue);
+      // transform: translateY(100px); 
+      // opacity: 0;
+      // animation: opaciySlideUp 0.5s ease-in $delay 1 forwards;
     }
 
     .whatido {
       $delay: calc($delay + 0.3s);
-      transform: translateY(100px);
-      opacity: 0;
+      // transform: translateY(100px);
+      // opacity: 0;
       color: var(--regent-gray);
-      animation: opaciySlideUp 0.5s ease-in $delay 1 forwards;
-      font-size: clamp(20px, 5vw, 60px);
+      // animation: opaciySlideUp 0.5s ease-in $delay 1 forwards;
+      font-size: clamp(20px, 5vw, 40px);
       margin-bottom: 0.7em;
     }
   }
@@ -42,12 +65,12 @@
   .statement {
     $delay: calc($delay + 0.4s);
     width: 70%;
-    color: var(--regent-gray);
+    color: var(--rock-blue);
     font-size: var(--ft-lg);
     line-height: 2rem;
-    transform: translateY(100px);
-    opacity: 0;
-    animation: opaciySlideUp 0.5s ease-in $delay 1 forwards;
+    // transform: translateY(100px);
+    // opacity: 0;
+    // animation: opaciySlideUp 0.5s ease-in $delay 1 forwards;
 
     span {
       color: var(--ocean-blue);

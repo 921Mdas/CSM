@@ -46,17 +46,18 @@
     .first_pop,
     .second_pop {
       position: relative;
-      transform: translateY(100px);
+      margin-left: 1em;
+      // transform: translateY(100px);
     }
 
     .first_pop {
       $delay: calc($delay);
-      animation: smoothUp 0.5s ease-in $delay 1 forwards;
+      // animation: smoothUp 0.5s ease-in $delay 1 forwards;
     }
 
     .second_pop {
       $delay: calc($delay + 0.3s);
-      animation: smoothUp 0.5s ease-in $delay 1 forwards;
+      // animation: smoothUp 0.5s ease-in $delay 1 forwards;
     }
   }
 
