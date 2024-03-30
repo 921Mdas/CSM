@@ -144,8 +144,17 @@
 
   .about {
     height: max-content;
+
+    .title{
+      margin-bottom: 1em;
+      padding:1em 0;
+    }
     .about_brandstatement {
       @include flex(flex-start, center, column, 15px);
+
+      .avatar{
+        margin: 1em 0;
+      }
 
       .brandstatement {
         height: max-content;
@@ -236,6 +245,9 @@
     display: none;
   }
 }
+
+// **************************************
+
 
 @media screen and (max-width: 1040px) {
   // ***************navbar
@@ -459,6 +471,9 @@
   }
 }
 
+// **************************************
+
+
 @media screen and (max-width: 800px) {
 
   .landing_page{
@@ -599,11 +614,18 @@
   }
 }
 
+// **************************************
+
+
 @media screen and (max-width: 550px) {
 
   .landing_page{
 
     text-align: center;
+
+    .whatido{
+      margin-top: 1em;
+    }
     .greetings{
       opacity: 0 !important;
 
@@ -739,23 +761,77 @@
   }
 }
 
+// **************************************
+
 
 
 @media screen and (max-width: 450px) {
 
   .landing_page_content{
     border: solid 1px transparent;
-  }
 
+    
   .landing_page {
     padding-top: 1em;
     margin: 1.5em 0;
   }
+  }
+
 
   .about{
 
+     .about_brandstatement {
+       .avatar {
+         margin-bottom: 0px;
+         width: 100%;
+ 
+         img {
+           width: 100%;
+         }
+       }
+     }
+
+  .title{
+    padding: 1em 0;
+  }
+
+  .avatar{
+    img{
+      width: 60% !important;
+    }
+  }
+
+
     .stacks{
       height: 100vh;
+      .stacks_list {
+          flex-wrap: wrap;
+          width: 100%;
+          height: 100%;
+          display: grid;
+
+      .stack_skill {
+          display: grid;
+          justify-content: center;
+          // align-items: center;
+
+        .stack1{
+          text-align: center;
+          border: solid 1px var(--regent-gray);
+          padding: 1em;
+          width: 100%;
+        // border-radius: 10px;
+        // width: 80%;
+  
+  
+        .skill_name{
+          font-size: .9rem ;
+          width: 100px; 
+  
+        }
+        }
+      }
+    }
       
        .stack1Comp{
          display: grid;
@@ -765,44 +841,12 @@
 
 
 
-    .about_brandstatement {
-       .avatar {
-         margin-bottom: 0px;
-         width: 100%;
  
-         img {
-           width: 100%;
-         }
-       }
-     }
 
   }
 
-  .stacks{
-    .stacks_list {
-      flex-wrap: wrap;
-      
-  
-      .stack_skill {
 
-        .stack1{
-        text-align: center;
-        border: solid 1px var(--regent-gray);
-        // border-radius: 10px;
-        width: 80%;
-  
-  
-        .skill_name{
-        font-size: .9rem ;
-        width: 100px; 
-  
-        }
-  
-         
-        }
-      }
-    }
-  }
+  .projects{
 
   .project02 {
     .presentation_description {
@@ -816,7 +860,11 @@
     }
   }
 
-  .projects{
+    .project03 {
+    .project_descr {
+      height: 30vh !important;
+    }
+  }
 
     .project02, .project01,.project03 {
       .presentation_description {
@@ -833,11 +881,7 @@
 
   } 
 
-  .project03 {
-    .project_descr {
-      height: 30vh !important;
-    }
-  }
+
 
   .contact_section {
     .scrollup {
@@ -855,133 +899,110 @@
   }
 }
 
-@media screen and (max-width: 400px) {
 
-  .landing_page_content{
-    border: solid 1px transparent;
-  }
-
-  .landing_page {
-    padding-top: 1em;
-    margin: 1.5em 0;
-  }
-
-  .about{
-
-     .stacks {
-     height: 100vh;
-
-      .stacks_list {
-        margin-top: 1.5em;
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
+// **************************************
 
 
-      .stack1{
-        text-align: center;
-        border: solid 1px var(--regent-gray);
-        width: 100px;
-        padding: 1em;
-        // border-radius: 10px;
+// @media screen and (max-width: 400px) {
 
-        .skill_name{
-        text-align: center;
-        width: 100%;
+// .landing_page_content{
+//     border: solid 1px transparent;
 
-        }
-      }
+//     .landing_page {
+//     padding-top: 1em;
+//     margin: 1.5em 0;
+//   }
+// }
 
-      }
-    }
-
-
-
-
-
-    .about_brandstatement {
-       .avatar {
-         margin-bottom: 0px;
-         width: 100%;
+  
+// .about{
+//     .about_brandstatement {
+//        .avatar {
+//          margin-bottom: 0px;
+//          width: 100%;
  
-         img {
-           width: 100%;
-         }
-       }
-     }
+//          img {
+//            width: 100%;
+//          }
+//        }
+//      }
 
-  }
+//     .stacks {
+//       height: 100vh;
 
-  .stacks_list {
-    flex-wrap: wrap;
+//       .stacks_list {
+//         margin-top: 1.5em;
+//         display: grid;
+//         grid-template-columns: repeat(2,1fr);
 
-    .stack_skill {
-      // padding: 10px;
+//        .stack_skill{
+//           .stack1{
+//               text-align: center;
+//               border: solid 1px var(--regent-gray);
+//               padding: 1em;
 
-      .stack1{
-      text-align: center;
-      border: solid 1px var(--regent-gray);
-      padding: 1em;
-      // border-radius: 10px;
+//               .skill_name{
+//               text-align: center;
+//               width: 100%;
+//         }
+//       }
 
-      .skill_name{
-      font-size: .9rem ;
-      width: 100px; 
-      }
+//        }
+//       }
+//     }
 
-       
-      }
-    }
-  }
+// }
 
-  .project02 {
-    .presentation_description {
-      height: max-content;
+// .projects{
 
-      .project_descr {
-        margin-bottom: 1em !important;
-        height: 23vh !important;
+//   .project02 {
+//     .presentation_description {
+//       height: max-content;
 
-      }
-    }
-  }
+//       .project_descr {
+//         margin-bottom: 1em !important;
+//         height: 23vh !important;
 
-  .projects{
+//       }
+//     }
+//   }
 
-    .project02, .project01,.project03 {
-      .presentation_description {
-        .stack_used {
-          ul {
-            li{
-    font-size: .8rem;
-    text-align: center;
-  }
-          }
-        }
-      }
-    }
+//   .project03 {
+//     .project_descr {
+//       height: 30vh !important;
+//     }
+//   }
 
-  } 
+//   .project02, .project01,.project03 {
+//       .presentation_description {
+//         .stack_used {
+//           ul {
+//             li{
+//     font-size: .8rem;
+//     text-align: center;
+//   }
+//           }
+//         }
+//       }
+//     }
 
-  .project03 {
-    .project_descr {
-      height: 30vh !important;
-    }
-  }
+// } 
 
-  .contact_section {
-    .scrollup {
-      left: 0%;
-      bottom: 2%;
-      position: absolute;
 
-      a {
-        color: var(--ocean-blue);
-        cursor: pointer;
-        position: absolute;
-        right: 0;
-      }
-    }
-  }
-}
+//   .contact_section {
+//     .scrollup {
+//       left: 0%;
+//       bottom: 2%;
+//       position: absolute;
+
+//       a {
+//         color: var(--ocean-blue);
+//         cursor: pointer;
+//         position: absolute;
+//         right: 0;
+//       }
+//     }
+//   }
+// }
 
 

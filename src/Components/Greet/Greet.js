@@ -37,15 +37,17 @@ const Greet = () => {
                 </div>
                 <div className="statement">
                   <div className="first_statement">
-                    Results-driven professional with track record of elevating customer satisfaction for 5+ years and driving substantial business
-                    growth through strategic account management and innovative customer success methodologies.
+                    "Hey there! 🌟 I'm a dynamic professional with over 5 years of experience in boosting customer satisfaction and driving business growth.
+                     <br />
+                     <br />
+                     💼 I'm all about connecting the dots with data 📊 and leveraging innovative customer success methodologies to achieve stellar results.
+                     <br/>
+                     <br/>
+                     💡 From unraveling insights with data science 📈 to fostering customer growth 🚀, I'm passionate about crafting experiences that not only delight customers but also propel businesses forward. 
                   </div>
                   <div className="second_statement">
                     <br />
-                    Talk to me about customer success methodologies | connecting the dots with data | Data science | Customer Growth .
-                     <span>
-                    Say hi, I'm looking forward to connecting!
-                      </span> 
+                    Looking forward to connecting!
                   </div>
                 </div>
             </div>

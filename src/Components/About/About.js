@@ -87,7 +87,7 @@ const About = () => {
           <span>
             <span className="brand_mainstatement">
 
-            🧑🏾‍💻 The world is drowning in information. To manage it, we need the right tools to remove the noise and find what can inform strategy: software. I love the SaaS era and what it brings as a solution to previously complex and time-consuming problems. I do my part by helping clients understanding the software at their disposal and how they can best use data to grow revenue.
+            🧑🏾‍💻 The world is drowning in information. To manage it, we need the right tools to remove the noise and find what can inform strategy: software. I love the SaaS era and what it brings as a solution to previously complex and time-consuming problems. I enjoy helping clients understanding the software at their disposal and how they can best use data to grow revenue.
             </span>
             <br />
             <br />
@@ -98,7 +98,9 @@ const About = () => {
             <br/>
             <br/>
             <div className="brand_outside_work">
-            Outside of work: Sushi, Music, Family, Nature, repeat.
+            <strong>
+              Outside of work:
+              </strong> 🍣 🎵 👨‍👩‍👧 🌿 Sushi, Music, Family, Nature, repeat. 🍣 🎵 👨‍👩‍👧 🌿 
             </div>
           </span>
           
